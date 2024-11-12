@@ -1,13 +1,666 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Tailwind's base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --custome-brown: #663333; /* Replace #663333 with your desired brown color code */
+  --custome-gray: #686868; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* Applying the custom fonts */
+body {
+  font-family: sans-serif;
+  overflow-x: hidden !important;
+}
+
+/* Add this to your CSS or Tailwind styles */
+
+/* .slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+} */
+
+.slider2 {
+  background: url("./assets/images/home_bg.webp");
+  background-size: cover;
+  /*background-position: 35%;*/
+  background-repeat: no-repeat;
+  /* height: 890px; */
+  z-index: 1;
+  position: relative;
+      text-align: left;
+      content: "business process consultant";
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .slider2.slider-area {
+      height: 550px;
+      background-size: inherit;
+      background-position: inherit;
+  }
+}
+
+.footerContent {
+  background-image: url("./assets/images/footer-bg.webp");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures background image covers entire section */
+  background-blend-mode: overlay; /* Adds overlay effect for contrast */
+  /* padding: 2rem 1rem; */
+  color: white; /* Ensures text color is consistent */
+}
+
+.slick-track{
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.image-container img {
+  filter: contrast(0);
+  transition: filter 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+  filter: contrast(1) saturate(1.5); /* Adjust the saturation and contrast on hover */
+}
+
+.content_container {
+  margin: 10px 20px 0px 20px;
+}
+.content_zoho {
+  margin: 10px 10px 0px 10px;
+}
+
+@media (min-width: 1024px) {
+  
+.content_container {
+  margin: 10px 110px 0px 110px;
+}
+.content_zoho {
+  margin: 10px 80px 0px 80px;
+}
+
+}
+
+
+
+
+/*slider button*/
+.slider-button a {
+  padding: 11px 20px 16px 30px;
+  font-family: 'Fira Sans';
+  font-weight: 500;
+  color: #fff;
+  background: #cfa476;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #cfa476;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.slider-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.slider-button a i {
+  font-size: 20px;
+  /* width: 30px;
+  height: 30px; */
+  line-height: 32px;
+  border-radius: 25px;
+  text-align: center;
+  /* background: #fff;
+  color: #cfa476; */
+  display: inline-block;
+  /* margin-left: 14px; */
+  position: relative;
+  top: 6px;
+  transition: .5s;
+}
+
+.slider-button a:hover {
+  color: #cfa476;
+}
+
+.slider-button a:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+.slider-button a:hover i {
+  /* background: #cfa476; */
+  /* color: #fff; */
+}
+
+/*slider contact*/
+
+
+/*about-button button*/
+.about-button a {
+  padding: 11px 20px 16px 30px;
+  font-family: 'Fira Sans';
+  font-weight: 500;
+  color: #fff;
+  background: #663333;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #663333;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.about-button a i {
+  font-size: 20px;
+  /* width: 30px;
+  height: 30px; */
+  line-height: 32px;
+  border-radius: 25px;
+  text-align: center;
+  /* background: #fff;
+  color: #cfa476; */
+  display: inline-block;
+  /* margin-left: 14px; */
+  position: relative;
+  top: 4px;
+  transition: .5s;
+}
+
+.about-button a:hover {
+  color: #cfa476;
+  border: 1px solid #cfa476;
+}
+
+.about-button a:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+
+
+/*readmore-button button*/
+.readmore-button a {
+  padding: 15px 27px 15px 27px;
+  font-family: 'Fira Sans';
+  font-weight: 500;
+  color: #fff;
+  background: #663333;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #663333;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.readmore-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.readmore-button a:hover {
+  color: #cfa476;
+  border: 1px solid #cfa476;
+}
+
+.readmore-button a:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+
+
+@keyframes leftToRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bottomToTop {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
+}
+
+.animate-rotate360 {
+  animation: rotate360 15s linear infinite; /* Use 'linear' for constant speed */
+}
+
+.animate-leftToRight {
+  animation: leftToRight 5s ease-in-out infinite;
+}
+
+.animate-topToBottom {
+  animation: topToBottom 5s ease-in-out infinite;
+}
+
+.animate-bottomToTop {
+  animation: bottomToTop 5s ease-in-out infinite;
+}
+
+
+.animated-border {
+  position: relative;
+  width: 4rem;
+  height: 3px;
+  background-color: #663333; 
+  margin-top: 1.75rem;
+  overflow: hidden;
+}
+
+.moving-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: slideDot 5s ease-in-out infinite;
+}
+
+@keyframes slideDot {
+  0%, 100% { left: 0; }
+  50% { left: 100%; }
+}
+
+
+
+.single-feature-box {
+  padding: 45px 19px 49px 40px;
+  border: 0;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  /* margin-bottom: 30px; */
+  overflow: hidden;
+  border-top: 5px solid #cfa476;
+  transition: .5s;
+  background: #fff;
+  box-shadow: 0px 5px 30px 0px rgb(12 13 16 / 26%);
+  /* height: 362px; */
+}
+
+.single-feature-box:before {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  background: url("./assets/images/box-bg2.webp");
+  background-size: cover;
+  transition: .5s;
+  opacity: 0;
+  z-index: -1;
+   /* content:  "consulting services"; */
+   background-repeat: no-repeat;
+}
+
+
+
+
+/*service all hover*/
+.single-feature-box:hover .feature-box-inner {
+  opacity: 0;
+}
+
+.single-feature-box:hover .sydney-feature-back {
+  transform: perspective(500px)rotateX(0deg);
+}
+
+.single-feature-box:hover .feature-content-back {
+  opacity: 0;
+}
+
+.single-feature-box:hover:before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.single-feature-box:hover .feature-icon1 img {
+  opacity: 0;
+}
+
+.single-feature-box:hover .feature-icon1:after {
+  opacity: 0;
+}
+
+/*feature back title*/
+.sydney-feature-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 44%;
+  width: 100%;
+  text-align: left;
+  background: #020202;
+  padding: 32px 20px 0 46px;
+  transform: perspective(500px)rotateX(-90deg);
+  opacity: 1;
+  transform-origin: 50% 0%;
+  transition: .5s;
+}
+
+.feature-back-title h3 {
+  color: #663333;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Fira Sans';
+  margin: 0 0 0;
+  position: relative;
+  left: 40px;
+}
+
+.feature-back-title h3:before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -40px;
+  height: 2px;
+  width: 35px;
+  background: #663333;
+}
+
+.feature-back-title h2 {
+  margin: 11px 0 14px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+.single-feature-box:hover .sydney-feature-back {
+  transform: perspective(500px)rotateX(0deg);
+}
+
+
+/* New */
+/** Service Style Three **/
+.style-three.service-area {
+  background: url("./assets/images/service-bg2.webp") center / cover no-repeat;
+  padding: 95px 0 84px;
+  position: relative;
+  z-index: 1;
+}
+
+.style-three.service-area:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.65);
+  z-index: -1;
+}
+
+/** Single Feature Box **/
+.single-feature-box-2 {
+  padding: 36px 15px 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  height: 24em;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.single-feature-box-2-border{
+  background: #663333;
+    height: 2px;
+    width: 64px;
+    position: relative;
+    border-radius: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto 19px;
+    transition: .5s;
+}
+
+/* Background icon for hover */
+.single-feature-box-2:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  background: url("./assets/images/box-bg3.webp") no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: -1;
+}
+
+
+
+/*sydney box button*/
+
+.service-button {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+.service-button a {
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 15px;
+  font-family: 'Fira Sans';
+  border-radius: 22px;
+  background-color: #663333;
+  color: #ffffff;
+  border: 1px solid rgba(35, 35, 35, 0.1);
+  display: inline-flex;           /* Set to flex for alignment */
+  align-items: center;            /* Center vertically */
+  justify-content: center;        /* Center horizontally */
+  gap: 8px;                       /* Space between text and icon */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.service-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #cfa476;
+  border-radius: 30px;
+  transform: scale(0);
+  transition: .5s;
+}
+
+.service-button a i {
+  font-size: 18px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+
+/* Image centering */
+.feature-icon1 img {
+  /* display: block;
+  margin: 0 auto; */
+}
+.feature-title-2{
+  color: var(--custome-gray);
+}
+
+/* Hover Effects */
+.single-feature-box-2:hover .feature-title-2 {
+  color: #fff;
+}
+.single-feature-box-2:hover .single-feature-box-2-border {
+  background-color: #fff;
+}
+
+.single-feature-box-2:hover:before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.single-feature-box-2:hover .feature-box-inner-2 {
+  color: #fff;
+}
+
+.single-feature-box-2:hover .feature-title,
+.single-feature-box-2:hover .feature-text {
+  color: #fff;
+}
+
+/* Button style within the card on hover */
+.single-feature-box-2:hover .service-button a {
+  color: #fff;             /* Button text color on card hover */
+  background-color: #cfa476;   /* Button background color on card hover */
+}
+
+/* Button icon color change on card hover */
+.single-feature-box-2:hover .service-button a i {
+  color: #fff;              /* Icon color on card hover */
+}
+
+/* Process */
+
+
+.style-process.process-area {
+  background: url("./assets/images/process-bg.webp") center / cover no-repeat;
+  padding: 95px 0 84px;
+  position: relative;
+  z-index: 1;
+}
+
+.style-process.process-area:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(4, 4, 4, 0.65); */
+  z-index: -1;
+}
+
+
+
+.process-bg {
+  /* padding: 70px 0 17px; */
+  /* background: url(../images/resource/process-bg2.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  background: #ffffffa6;
+  box-shadow: 0 2px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-area {
+  background: #080808;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 95px 0 95px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.globback {
+  position: relative;
+  z-index: -1; /* Ensures the background image stays behind the content */
+}
+
+/* img {
+  z-index: -1;
+} */
+
+
+/* Adjusted padding for screens wider than 786px */
+@media (max-width: 786px) {
+  .style-process.process-area {
+    padding: 1px 0;
+    background-color: #f0f0f0; /* Temporary test color */
+  }
 }
